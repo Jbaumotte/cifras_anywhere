@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S'The "end" tag is unmatched, please check if you have a starting "block" tag'
+p3
+sS'layer'
+p4
+S'ParserContainer'
+p5
+sS'code'
+p6
+S'{{extend \'layout.html\'}}\n\n{{block head}}\n    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lily Script One">\n    <link href="/Cifras/static/css/cifra.css" rel="stylesheet" type="text/css" />\n    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>\n{{end}}\n\n{{response.title:}}\n\n<div id="right_sidebar">\n        <form >\n            <INPUT id="evernote" type="button" value=""\n                onclick="ajax(\'evernote\',[\'\'],\':eval\')"/>\n        </form>\n        <br>\n        <form action="get_me_a_pdf">\n            <button id="pdf_button" type="submit"></button>\n        </form>\n        <button id="save">Save</button>\n    </div>\n\n{{end}}\n\n{{block left_sidebar}}\n<div id="left_sidebar"></div>\n    \n{{end}}\n\n{{block center}}\n<script>\n\n        $(".span6").click(function (e) {\n            $("#save").show();\n            e.stopPropagation();\n        });\n\n        $(document).click(function() {\n            $("#save").hide();\n         });\n\n    $(document).ready(function(){\n        var editedContent;\n        $(\'#save\').click (function(){\n            editedContent = $(\'#lyrics\').html();\n            $.ajax({\n            type: "POST",\n            url: "update_song",\n            data: editedContent,\n            });\n        });\n    });\n\n</script>\n<pre>\n<p id="lyrics" contenteditable="true">\n    \n    {{=session.letra}}\n</p></pre> \n\n{{end}}\n\n{{block right_sidebar}}\n    <div id="right_sidebar">\n        <form >\n            <INPUT id="evernote" type="button" value=""\n                onclick="ajax(\'evernote\',[\'\'],\':eval\')"/>\n        </form>\n        <br>\n        <form action="get_me_a_pdf">\n            <button id="pdf_button" type="submit"></button>\n        </form>\n        <button id="save">Save</button>\n    </div>\n{{end}}\n'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'None\n'
+p11
+s.

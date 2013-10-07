@@ -1,0 +1,100 @@
+{{extend 'layout.html'}}
+{{block head}}
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Walter Turncoat">
+<style>
+
+body{
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.65) 44%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(44%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 44%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 44%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 44%,rgba(0,0,0,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 44%,rgba(0,0,0,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+    border: none;
+    color: white;
+    }
+
+.page-header{
+    border: none;
+    background:url(/Cifras/static/images/logo_minhascifras.png) no-repeat;
+    width: 210px;
+    height: 70px;
+    background-size: contain;
+    position: absolute;
+    padding-top: 200px;
+    padding-left: 200px;
+
+    transform:rotate(-90deg);
+    -ms-transform:rotate(-90deg); /* IE 9 */
+    -webkit-transform:rotate(-90deg); /* Safari and Chrome */
+
+}
+
+#main{
+
+    padding-top: -500px;
+    padding-left: 400px;
+    position:relative;
+    font-family: 'Walter Turncoat';
+    font-size:18px;
+
+}
+
+
+.button {
+    
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #ffffff;
+	padding: 11px 8px;
+	background: -moz-linear-gradient(
+		top,
+		#140214 0%,
+		#b8b8b8 97%,
+		#6b6b6b 75%,
+		#140414);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#140214),
+		color-stop(0.97, #b8b8b8),
+		color-stop(0.75, #6b6b6b),
+		to(#140414));
+	-moz-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 11px;
+	border: 0px solid #0d020d;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 20px rgba(087,087,087,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 20px rgba(087,087,087,1);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 20px rgba(087,087,087,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.4),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
+.button:active {
+
+    -webkit-box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white;
+    -moz-box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white;
+    box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white;}
+
+
+</style>
+{{end}}
+
+{{=form.custom.begin}}
+Qual o link da música? <div>{{=form.custom.widget.url}}</div>
+    <input class="button" type="submit" value="Pegar a cifra!" />
+{{=form.custom.end}}
+<br>
+<h4>
+    Músicas que voce pesquisou recentemente:
+</h4>
+
+{{=SQLTABLE(rows, headers=None)}}
