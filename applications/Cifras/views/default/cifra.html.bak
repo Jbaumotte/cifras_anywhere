@@ -7,17 +7,20 @@
 {{end}}
 
 {{block title}}
- <div id="right_sidebar">
-        <form >
-            <INPUT id="evernote" type="button" value=""
-                onclick="ajax('evernote',[''],':eval')"/>
-        </form>
-        <br>
-        <form action="get_me_a_pdf">
-            <button id="pdf_button" type="submit"></button>
-        </form>
-        <button id="save">Save</button>
-    </div>
+ <div id="title_button">
+        
+                <form >
+                    <INPUT id="evernote" type="button" value=""
+                        onclick="ajax('evernote',[''],':eval')"/>
+                </form>
+            
+            <form action="get_me_a_pdf">
+                <button id="pdf_button" type="submit"></button>
+            </form>
+            
+            <button id="save">Save</button>
+     
+ </div>
 
 {{end}}
 
@@ -29,9 +32,9 @@
 {{block center}}
 <script>
 
-        $(".span6").click(function (e) {
-            $("#save").show();
-            e.stopPropagation();
+    
+    $("#lyrics:select").click(function () {
+            $("#lyrics").css({color: "black", backgroundColor: "white", border: "double white 1px"});
         });
 
         $(document).click(function() {
@@ -57,18 +60,4 @@
     {{=session.letra}}
 </p></pre> 
 
-{{end}}
-
-{{block right_sidebar}}
-    <div id="right_sidebar">
-        <form >
-            <INPUT id="evernote" type="button" value=""
-                onclick="ajax('evernote',[''],':eval')"/>
-        </form>
-        <br>
-        <form action="get_me_a_pdf">
-            <button id="pdf_button" type="submit"></button>
-        </form>
-        <button id="save">Save</button>
-    </div>
 {{end}}

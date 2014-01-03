@@ -30,8 +30,8 @@ def index():
 
 @auth.requires_login()
 def cifra():
-    response.title = session.name
-    response.subtitles = session.banda
+    response.title = ""
+    response.subtitles = session.name+"-"+session.banda
     db.music.insert(user=auth.user_id, musica=session.name, banda=session.banda, url = session.url)
     return dict()
 

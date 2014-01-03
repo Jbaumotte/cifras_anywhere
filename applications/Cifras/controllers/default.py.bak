@@ -30,8 +30,8 @@ def index():
 
 @auth.requires_login()
 def cifra():
-    response.title = session.name
-    response.subtitles = session.banda
+    response.title = ""
+    response.subtitles = session.name+"<br>"+session.banda
     db.music.insert(user=auth.user_id, musica=session.name, banda=session.banda, url = session.url)
     return dict()
 
@@ -39,8 +39,8 @@ def evernote():
     import evernote_song
     evernote_song.evernote_song(session.name, session.banda, session.letra)
     response.flash='Gravado no Evernote!'
-    redirect(URL('ever'))
-    #return ("")
+    #redirect(URL('ever'))
+    return ("")
 
 
 def get_me_a_pdf():

@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+# request.requires_https()
+
+if not request.env.web2py_runtime_gae:
+    ## if NOT running on Google App Engine use SQLite or other DB
+    #from gluon.contrib.heroku import *
+    #try: db = DAL(os.environ.get('DATABASE_URL'))
+    #except: db = get_db(name=None, pool_size=10)
+    #db = DAL('sqlite://storage.db')
+    db = DAL('mysql://jbtte:mysql1234@mysql.server/jbtte$tjdf')
+else:
+    db = DAL('google:datastore')
+    session.connect(request, response, db=db)
+
+
+from gluon.tools import Auth
+auth = Auth(db)
+auth.define_tables(username=True)
+
+
+db.define_table('processo',
+   Field('user', default = auth.user_id),
+   Field('criado_em', 'date', default=request.now, label='Data'),
+   Field('classe'),
+   Field('numero'),
+   Field('competencia'),
+   Field('reu'),
+   Field('crime'))
+   
+db.processo.id.readable = False
+db.processo.id.writable = False
+db.processo.numero.requires = IS_NOT_IN_DB(db(db.processo.classe==request.vars.classe), 'processo.numero')

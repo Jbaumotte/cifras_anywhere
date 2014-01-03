@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S'<class \'_mysql_exceptions.OperationalError\'> (1060, "Duplicate column name \'usada\'")'
+p3
+sS'layer'
+p4
+S'/home/jbtte/web2py/applications/questoes/models/db.py'
+p5
+sS'code'
+p6
+S'# -*- coding: utf-8 -*-\n# request.requires_https()\n\nif not request.env.web2py_runtime_gae:\n    ## if NOT running on Google App Engine use SQLite or other DB\n    #from gluon.contrib.heroku import *\n    #try: db = DAL(os.environ.get(\'DATABASE_URL\'))\n    #except: db = get_db(name=None, pool_size=10)\n    #db = DAL(\'sqlite://storage.db\')\n    db = DAL(\'mysql://jbtte:mysql1234@mysql.server/jbtte$questoes\')\nelse:\n    db = DAL(\'google:datastore\')\n    session.connect(request, response, db=db)\n\n\nfrom gluon.tools import Auth\nauth = Auth(db)\nauth.define_tables(username=True)\n\n\ndb.define_table(\'administrativo\',\n   Field(\'enunciado\', "text"),\n   Field(\'explicacao\', "text"),\n   Field(\'resposta\', "integer"),\n   Field(\'banca\', \'integer\'),\n   Field(\'assunto\', \'integer\'),\n   Field(\'usada\'))\n   \n\ndb.define_table(\'civil_1\',\n   Field(\'enunciado\', "text"),\n   Field(\'explicacao\', "text"),\n   Field(\'resposta\', "integer"),\n   Field(\'banca\', \'integer\'),\n   Field(\'assunto\', \'integer\'))\n   \ndb.define_table(\'penal\',\n   Field(\'enunciado\', "text"),\n   Field(\'explicacao\', "text"),\n   Field(\'resposta\', "integer"),\n   Field(\'banca\', \'integer\'),\n   Field(\'assunto\', \'integer\'))\n   \ndb.define_table(\'proc_penal\',\n   Field(\'enunciado\', "text"),\n   Field(\'explicacao\', "text"),\n   Field(\'resposta\', "integer"),\n   Field(\'banca\', \'integer\'),\n   Field(\'assunto\', \'integer\'))\n   \ndb.define_table(\'const\',\n   Field(\'enunciado\', "text"),\n   Field(\'explicacao\', "text"),\n   Field(\'resposta\', "integer"),\n   Field(\'banca\', \'integer\'),\n   Field(\'assunto\', \'integer\'))\n\ndb.define_table(\'banca\',\n    Field(\'numero\', \'integer\'),\n    Field(\'nome\'))\n    \n\ndb.define_table(\'materia_civil_1\',\n    Field(\'mateira\'),\n    Field(\'num_questoes\', \'integer\'))\n\ndb.define_table(\'materia_administrativo\',\n    Field(\'mateira\'),\n    Field(\'num_questoes\', \'integer\'))\n\ndb.define_table(\'materia_const\',\n    Field(\'mateira\'),\n    Field(\'num_questoes\', \'integer\'))\n\ndb.define_table(\'materia_penal\',\n    Field(\'mateira\'),\n    Field(\'num_questoes\', \'integer\'))\n\ndb.define_table(\'materia_proc_penal\',\n    Field(\'mateira\'),\n    Field(\'num_questoes\', \'integer\'))\n'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/home/jbtte/web2py/gluon/restricted.py", line 212, in restricted\n    exec ccode in environment\n  File "/home/jbtte/web2py/applications/questoes/models/db.py", line 27, in <module>\n    Field(\'usada\'))\n  File "/home/jbtte/web2py/gluon/dal.py", line 7788, in define_table\n    table = self.lazy_define_table(tablename,*fields,**args)\n  File "/home/jbtte/web2py/gluon/dal.py", line 7825, in lazy_define_table\n    polymodel=polymodel)\n  File "/home/jbtte/web2py/gluon/dal.py", line 991, in create_table\n    fake_migrate=fake_migrate)\n  File "/home/jbtte/web2py/gluon/dal.py", line 1094, in migrate_table\n    self.execute(sub_query)\n  File "/home/jbtte/web2py/gluon/dal.py", line 1784, in execute\n    return self.log_execute(*a, **b)\n  File "/home/jbtte/web2py/gluon/dal.py", line 1778, in log_execute\n    ret = self.cursor.execute(command, *a[1:], **b)\n  File "/usr/local/lib/python2.7/dist-packages/MySQLdb/cursors.py", line 201, in execute\n    self.errorhandler(self, exc, value)\n  File "/usr/local/lib/python2.7/dist-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler\n    raise errorclass, errorvalue\nOperationalError: (1060, "Duplicate column name \'usada\'")\n'
+p11
+s.

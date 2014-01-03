@@ -1,0 +1,187 @@
+timestamp: 2013-11-25T17:59:51.547098
+CREATE TABLE auth_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(128),
+    last_name VARCHAR(128),
+    email VARCHAR(255),
+    username VARCHAR(128),
+    password VARCHAR(255),
+    registration_key VARCHAR(255),
+    reset_password_key VARCHAR(255),
+    registration_id VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-11-25T17:59:51.725992
+CREATE TABLE auth_group(
+    id INT AUTO_INCREMENT NOT NULL,
+    role VARCHAR(255),
+    description LONGTEXT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-11-25T17:59:51.789755
+CREATE TABLE auth_membership(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT, INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user (id) ON DELETE CASCADE,
+    group_id INT, INDEX group_id__idx (group_id), FOREIGN KEY (group_id) REFERENCES auth_group (id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-11-25T17:59:51.961148
+CREATE TABLE auth_permission(
+    id INT AUTO_INCREMENT NOT NULL,
+    group_id INT, INDEX group_id__idx (group_id), FOREIGN KEY (group_id) REFERENCES auth_group (id) ON DELETE CASCADE,
+    name VARCHAR(255),
+    table_name VARCHAR(255),
+    record_id INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-11-25T17:59:52.024588
+CREATE TABLE auth_event(
+    id INT AUTO_INCREMENT NOT NULL,
+    time_stamp DATETIME,
+    client_ip VARCHAR(255),
+    user_id INT, INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user (id) ON DELETE CASCADE,
+    origin VARCHAR(255),
+    description LONGTEXT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-11-25T17:59:52.118583
+CREATE TABLE auth_cas(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT, INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user (id) ON DELETE CASCADE,
+    created_on DATETIME,
+    service VARCHAR(255),
+    ticket VARCHAR(255),
+    renew CHAR(1),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-11-25T17:59:52.211826
+CREATE TABLE administrativo(
+    id INT AUTO_INCREMENT NOT NULL,
+    enunciado LONGTEXT,
+    explicacao LONGTEXT,
+    resposta INT,
+    banca INT,
+    assunto INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-11-25T18:00:57.032333
+CREATE TABLE civil(
+    id INT AUTO_INCREMENT NOT NULL,
+    enunciado LONGTEXT,
+    explicacao LONGTEXT,
+    resposta INT,
+    banca INT,
+    assunto INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-11-25T18:15:15.936792
+CREATE TABLE civil_1(
+    id INT AUTO_INCREMENT NOT NULL,
+    enunciado LONGTEXT,
+    explicacao LONGTEXT,
+    resposta INT,
+    banca INT,
+    assunto INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-11-27T20:39:18.171263
+CREATE TABLE penal(
+    id INT AUTO_INCREMENT NOT NULL,
+    enunciado LONGTEXT,
+    explicacao LONGTEXT,
+    resposta INT,
+    banca INT,
+    assunto INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-11-27T20:39:19.059303
+CREATE TABLE proc_penal(
+    id INT AUTO_INCREMENT NOT NULL,
+    enunciado LONGTEXT,
+    explicacao LONGTEXT,
+    resposta INT,
+    banca INT,
+    assunto INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-11-27T20:39:19.686699
+CREATE TABLE const(
+    id INT AUTO_INCREMENT NOT NULL,
+    enunciado LONGTEXT,
+    explicacao LONGTEXT,
+    resposta INT,
+    banca INT,
+    assunto INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-11-27T20:46:54.496618
+CREATE TABLE banca(
+    id INT AUTO_INCREMENT NOT NULL,
+    numero INT,
+    nome VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-12-02T17:24:10.866264
+ALTER TABLE administrativo ADD erros INT;
+timestamp: 2013-12-02T17:29:37.894311
+ALTER TABLE administrativo ADD erros INT;
+timestamp: 2013-12-02T17:41:10.194707
+ALTER TABLE administrativo ADD erros INT;
+timestamp: 2013-12-02T18:16:42.576888
+CREATE TABLE materia_civil_1(
+    id INT AUTO_INCREMENT NOT NULL,
+    mateira VARCHAR(255),
+    num_questoes INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-12-02T18:16:42.660326
+CREATE TABLE materia_administrativo(
+    id INT AUTO_INCREMENT NOT NULL,
+    mateira VARCHAR(255),
+    num_questoes INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-12-02T18:16:42.710051
+CREATE TABLE materia_const(
+    id INT AUTO_INCREMENT NOT NULL,
+    mateira VARCHAR(255),
+    num_questoes INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-12-02T18:16:42.764647
+CREATE TABLE materia_penal(
+    id INT AUTO_INCREMENT NOT NULL,
+    mateira VARCHAR(255),
+    num_questoes INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-12-02T18:16:42.866862
+CREATE TABLE materia_proc_penal(
+    id INT AUTO_INCREMENT NOT NULL,
+    mateira VARCHAR(255),
+    num_questoes INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2013-12-02T18:18:03.680197
+ALTER TABLE administrativo ADD usada VARCHAR(255);
+timestamp: 2013-12-03T18:00:40.721680
+ALTER TABLE administrativo ADD respondida INT;
+success!

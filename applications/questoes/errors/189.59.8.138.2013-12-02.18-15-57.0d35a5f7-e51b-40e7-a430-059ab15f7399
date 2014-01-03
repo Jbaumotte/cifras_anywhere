@@ -1,0 +1,520 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.SyntaxError'> Field: unknown field type: smallint for num_questoes"
+p3
+sS'layer'
+p4
+S'/home/jbtte/web2py/applications/questoes/models/db.py'
+p5
+sS'code'
+p6
+S'# -*- coding: utf-8 -*-\n# request.requires_https()\n\nif not request.env.web2py_runtime_gae:\n    ## if NOT running on Google App Engine use SQLite or other DB\n    #from gluon.contrib.heroku import *\n    #try: db = DAL(os.environ.get(\'DATABASE_URL\'))\n    #except: db = get_db(name=None, pool_size=10)\n    #db = DAL(\'sqlite://storage.db\')\n    db = DAL(\'mysql://jbtte:mysql1234@mysql.server/jbtte$questoes\')\nelse:\n    db = DAL(\'google:datastore\')\n    session.connect(request, response, db=db)\n\n\nfrom gluon.tools import Auth\nauth = Auth(db)\nauth.define_tables(username=True)\n\n\ndb.define_table(\'administrativo\',\n   Field(\'enunciado\', "text"),\n   Field(\'explicacao\', "text"),\n   Field(\'resposta\', "integer"),\n   Field(\'banca\', \'integer\'),\n   Field(\'assunto\', \'integer\'))\n   \n\ndb.define_table(\'civil_1\',\n   Field(\'enunciado\', "text"),\n   Field(\'explicacao\', "text"),\n   Field(\'resposta\', "integer"),\n   Field(\'banca\', \'integer\'),\n   Field(\'assunto\', \'integer\'))\n   \ndb.define_table(\'penal\',\n   Field(\'enunciado\', "text"),\n   Field(\'explicacao\', "text"),\n   Field(\'resposta\', "integer"),\n   Field(\'banca\', \'integer\'),\n   Field(\'assunto\', \'integer\'))\n   \ndb.define_table(\'proc_penal\',\n   Field(\'enunciado\', "text"),\n   Field(\'explicacao\', "text"),\n   Field(\'resposta\', "integer"),\n   Field(\'banca\', \'integer\'),\n   Field(\'assunto\', \'integer\'))\n   \ndb.define_table(\'const\',\n   Field(\'enunciado\', "text"),\n   Field(\'explicacao\', "text"),\n   Field(\'resposta\', "integer"),\n   Field(\'banca\', \'integer\'),\n   Field(\'assunto\', \'integer\'))\n\ndb.define_table(\'banca\',\n    Field(\'numero\', \'integer\'),\n    Field(\'nome\'))\n    \n\ndb.define_table(\'materia_civil_1\',\n    Field(\'mateira\'),\n    Field(\'num_questoes\', \'smallint\'))\n\ndb.define_table(\'materia_administrativo\',\n    Field(\'mateira\'),\n    Field(\'num_questoes\', \'smallint\'))\n\ndb.define_table(\'materia_const\',\n    Field(\'mateira\'),\n    Field(\'num_questoes\', \'smallint\'))\n\ndb.define_table(\'materia_penal\',\n    Field(\'mateira\'),\n    Field(\'num_questoes\', \'smallint\'))\n\ndb.define_table(\'materia_proc_penal\',\n    Field(\'mateira\'),\n    Field(\'num_questoes\', \'smallint\'))\n'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__getslice__'
+p12
+S"<method-wrapper '__getslice__' of exceptions.SyntaxError object>"
+p13
+sS'text'
+p14
+S'None'
+p15
+sS'__str__'
+p16
+S"<method-wrapper '__str__' of exceptions.SyntaxError object>"
+p17
+sS'__reduce__'
+p18
+S'<built-in method __reduce__ of exceptions.SyntaxError object>'
+p19
+sS'__dict__'
+p20
+S'{}'
+p21
+sS'__sizeof__'
+p22
+S'<built-in method __sizeof__ of exceptions.SyntaxError object>'
+p23
+sS'__init__'
+p24
+S"<method-wrapper '__init__' of exceptions.SyntaxError object>"
+p25
+sS'__setattr__'
+p26
+S"<method-wrapper '__setattr__' of exceptions.SyntaxError object>"
+p27
+sS'__reduce_ex__'
+p28
+S'<built-in method __reduce_ex__ of exceptions.SyntaxError object>'
+p29
+sS'__new__'
+p30
+S'<built-in method __new__ of type object>'
+p31
+sS'__format__'
+p32
+S'<built-in method __format__ of exceptions.SyntaxError object>'
+p33
+sS'__class__'
+p34
+S"<type 'exceptions.SyntaxError'>"
+p35
+sS'filename'
+p36
+S'None'
+p37
+sS'lineno'
+p38
+S'None'
+p39
+sS'msg'
+p40
+S"'Field: unknown field type: smallint for num_questoes'"
+p41
+sS'__doc__'
+p42
+S"'Invalid syntax.'"
+p43
+sS'__getitem__'
+p44
+S"<method-wrapper '__getitem__' of exceptions.SyntaxError object>"
+p45
+sS'__setstate__'
+p46
+S'<built-in method __setstate__ of exceptions.SyntaxError object>'
+p47
+sS'__getattribute__'
+p48
+S"<method-wrapper '__getattribute__' of exceptions.SyntaxError object>"
+p49
+sS'print_file_and_line'
+p50
+S'None'
+p51
+sS'args'
+p52
+S"('Field: unknown field type: smallint for num_questoes',)"
+p53
+sS'__subclasshook__'
+p54
+S'<built-in method __subclasshook__ of type object>'
+p55
+sS'offset'
+p56
+S'None'
+p57
+sS'__unicode__'
+p58
+S'<built-in method __unicode__ of exceptions.SyntaxError object>'
+p59
+sS'__delattr__'
+p60
+S"<method-wrapper '__delattr__' of exceptions.SyntaxError object>"
+p61
+sS'__repr__'
+p62
+S"<method-wrapper '__repr__' of exceptions.SyntaxError object>"
+p63
+sS'__hash__'
+p64
+S"<method-wrapper '__hash__' of exceptions.SyntaxError object>"
+p65
+ssS'evalue'
+p66
+S'Field: unknown field type: smallint for num_questoes'
+p67
+sS'request'
+p68
+cgluon.html
+XML_unpickle
+p69
+(S'sfS\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top">ajax</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">application</td><td valign="top">:</td><td><div>questoes</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">args</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">body</td><td valign="top">:</td><td><div>&lt;cStringIO.StringO object at 0x31c9458&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cid</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">client</td><td valign="top">:</td><td><div>189.59.8.138</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">controller</td><td valign="top">:</td><td><div>appadmin</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cookies</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">session_id_admin</td><td valign="top">:</td><td><div>189.59.8.138-53095406-6c85-47b1-a2ef-11c99b8e00f3<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_processos</td><td valign="top">:</td><td><div>189.59.8.136-2810583c-ad54-47fe-838f-45848f4e8be0<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_questoes</td><td valign="top">:</td><td><div>189.59.8.138-717e5ce0-af8e-449b-bd1a-3eff7ddce72f<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">sessionid</td><td valign="top">:</td><td><div>838b5b9b49289dc2147c0ea392e08cad<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">env</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">app_folders</td><td valign="top">:</td><td><div>set([&#x27;/home/jbtte/web2py/applications/admin/&#x27;, &#x27;/home/jbtte/web2py/applications/questoes/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">applications_parent</td><td valign="top">:</td><td><div>/home/jbtte/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">content_length</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">content_type</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">db_sessions</td><td valign="top">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">debugging</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">document_root</td><td valign="top">:</td><td><div>/usr/share/nginx/html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">gluon_parent</td><td valign="top">:</td><td><div>/home/jbtte/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept</td><td valign="top">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept_encoding</td><td valign="top">:</td><td><div>gzip,deflate,sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept_language</td><td valign="top">:</td><td><div>pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_connection</td><td valign="top">:</td><td><div>close</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_cookie</td><td valign="top">:</td><td><div>sessionid=838b5b9b49289dc2147c0ea392e08cad; session_id_processos=189.59.8.136-2810583c-ad54-47fe-838f-45848f4e8be0; __utma=133430031.548677870.1384882922.1385584483.1386004190.7; __utmc=133430031; __utmz=133430031.1384882922.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); session_id_questoes=189.59.8.138-717e5ce0-af8e-449b-bd1a-3eff7ddce72f; session_id_admin=189.59.8.138-53095406-6c85-47b1-a2ef-11c99b8e00f3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_host</td><td valign="top">:</td><td><div>jbtte.pythonanywhere.com</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_referer</td><td valign="top">:</td><td><div>https://jbtte.pythonanywhere.com/admin/default/design/questoes</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_user_agent</td><td valign="top">:</td><td><div>Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_x_forwarded_for</td><td valign="top">:</td><td><div>189.59.8.138</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_x_real_ip</td><td valign="top">:</td><td><div>189.59.8.138</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">https</td><td valign="top">:</td><td><div>on</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_jython</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_pypy</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">local_hosts</td><td valign="top">:</td><td><div><table><tr><td><div>harry-liveweb1</div></td></tr><tr><td><div>jbtte.pythonanywhere.com</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>50.19.109.98</div></td></tr><tr><td><div>localhost</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path_info</td><td valign="top">:</td><td><div>/questoes/appadmin/index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">query_string</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">remote_addr</td><td valign="top">:</td><td><div>10.124.194.55</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">remote_port</td><td valign="top">:</td><td><div>49050</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">request_method</td><td valign="top">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">request_uri</td><td valign="top">:</td><td><div>/questoes/appadmin/index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">script_name</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_name</td><td valign="top">:</td><td><div>jbtte.pythonanywhere.com</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_port</td><td valign="top">:</td><td><div>443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_protocol</td><td valign="top">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">uwsgi_node</td><td valign="top">:</td><td><div>harry-liveweb1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">uwsgi_version</td><td valign="top">:</td><td><div>1.9.16</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_path</td><td valign="top">:</td><td><div>/home/jbtte/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_version</td><td valign="top">:</td><td><div>2.5.1-stable+timestamp.2013.06.06.15.39.19</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_errors</td><td valign="top">:</td><td><div>&lt;uwsgi_file__bin_user_wsgi_wrapper.ErrorLogWrapper object at 0x2e74b10&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_file_wrapper</td><td valign="top">:</td><td><div>&lt;built-in function uwsgi_sendfile&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_input</td><td valign="top">:</td><td><div>&lt;uwsgi._Input object at 0x7f0a71a88600&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_multiprocess</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_multithread</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_run_once</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_url_scheme</td><td valign="top">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_version</td><td valign="top">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">extension</td><td valign="top">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">folder</td><td valign="top">:</td><td><div>/home/jbtte/web2py/applications/questoes/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">function</td><td valign="top">:</td><td><div>index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">get_vars</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">global_settings</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">app_folders</td><td valign="top">:</td><td><div>set([&#x27;/home/jbtte/web2py/applications/admin/&#x27;, &#x27;/home/jbtte/web2py/applications/questoes/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">applications_parent</td><td valign="top">:</td><td><div>/home/jbtte/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">db_sessions</td><td valign="top">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">debugging</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">gluon_parent</td><td valign="top">:</td><td><div>/home/jbtte/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_jython</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_pypy</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">local_hosts</td><td valign="top">:</td><td><div><table><tr><td><div>harry-liveweb1</div></td></tr><tr><td><div>jbtte.pythonanywhere.com</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>50.19.109.98</div></td></tr><tr><td><div>localhost</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_version</td><td valign="top">:</td><td><div>2.5.1-stable+timestamp.2013.06.06.15.39.19</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_https</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_local</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_restful</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">now</td><td valign="top">:</td><td><div>datetime.datetime(2013, 12, 2, 18, 15, 57, 884727)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">post_vars</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">raw_args</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">raw_extension</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">url</td><td valign="top">:</td><td><div>/questoes/appadmin/index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">utcnow</td><td valign="top">:</td><td><div>datetime.datetime(2013, 12, 2, 18, 15, 57, 884760)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">uuid</td><td valign="top">:</td><td><div>questoes/189.59.8.138.2013-12-02.18-15-57.0d35a5f7-e51b-40e7-a430-059ab15f7399</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">vars</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">environ</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">CONTENT_LENGTH</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">CONTENT_TYPE</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">DOCUMENT_ROOT</td><td valign="top">:</td><td><div>/usr/share/nginx/html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTPS</td><td valign="top">:</td><td><div>on</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT</td><td valign="top">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT_ENCODING</td><td valign="top">:</td><td><div>gzip,deflate,sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT_LANGUAGE</td><td valign="top">:</td><td><div>pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_CONNECTION</td><td valign="top">:</td><td><div>close</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_COOKIE</td><td valign="top">:</td><td><div>sessionid=838b5b9b49289dc2147c0ea392e08cad; session_id_processos=189.59.8.136-2810583c-ad54-47fe-838f-45848f4e8be0; __utma=133430031.548677870.1384882922.1385584483.1386004190.7; __utmc=133430031; __utmz=133430031.1384882922.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); session_id_questoes=189.59.8.138-717e5ce0-af8e-449b-bd1a-3eff7ddce72f; session_id_admin=189.59.8.138-53095406-6c85-47b1-a2ef-11c99b8e00f3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_HOST</td><td valign="top">:</td><td><div>jbtte.pythonanywhere.com</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_REFERER</td><td valign="top">:</td><td><div>https://jbtte.pythonanywhere.com/admin/default/design/questoes</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_USER_AGENT</td><td valign="top">:</td><td><div>Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_X_FORWARDED_FOR</td><td valign="top">:</td><td><div>189.59.8.138</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_X_REAL_IP</td><td valign="top">:</td><td><div>189.59.8.138</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">PATH_INFO</td><td valign="top">:</td><td><div>/questoes/appadmin/index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">QUERY_STRING</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REMOTE_ADDR</td><td valign="top">:</td><td><div>10.124.194.55</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REMOTE_PORT</td><td valign="top">:</td><td><div>49050</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REQUEST_METHOD</td><td valign="top">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REQUEST_URI</td><td valign="top">:</td><td><div>/questoes/appadmin/index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SCRIPT_NAME</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_NAME</td><td valign="top">:</td><td><div>jbtte.pythonanywhere.com</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_PORT</td><td valign="top">:</td><td><div>443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_PROTOCOL</td><td valign="top">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">uwsgi.node</td><td valign="top">:</td><td><div>harry-liveweb1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">uwsgi.version</td><td valign="top">:</td><td><div>1.9.16</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.errors</td><td valign="top">:</td><td><div>&lt;uwsgi_file__bin_user_wsgi_wrapper.ErrorLogWrapper object at 0x2e74b10&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.file_wrapper</td><td valign="top">:</td><td><div>&lt;built-in function uwsgi_sendfile&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.input</td><td valign="top">:</td><td><div>&lt;cStringIO.StringO object at 0x31c9458&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.multiprocess</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.multithread</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.run_once</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.url_scheme</td><td valign="top">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.version</td><td valign="top">:</td><td><div>1</div></td></tr></table></div></td></tr></table></div></td></tr></table></div>'
+tRp70
+sS'frames'
+p71
+(lp72
+(dp73
+S'file'
+p74
+S'/home/jbtte/web2py/gluon/restricted.py'
+p75
+sS'dump'
+p76
+(dp77
+S'environment'
+p78
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, 'CAT': <class 'gluon.html.CAT'>, 'CENTER': <class 'gluon.html.CENTER'>, ...}"
+p79
+sS'ccode'
+p80
+S'<code object <module> at 0x3201530, file "/home/...b2py/applications/questoes/models/db.py", line 4>'
+p81
+ssS'lnum'
+p82
+I212
+sS'lines'
+p83
+(dp84
+I207
+S'    try:'
+p85
+sI208
+S'        if isinstance(code, types.CodeType):'
+p86
+sI209
+S'            ccode = code'
+p87
+sI210
+S'        else:'
+p88
+sI211
+S'            ccode = compile2(code, layer)'
+p89
+sI212
+S'        exec ccode in environment'
+p90
+sI213
+S'    except HTTP:'
+p91
+sI214
+S'        raise'
+p92
+sI215
+S'    except RestrictedError:'
+p93
+sI216
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p94
+ssS'call'
+p95
+S'(code="# -*- coding: utf-8 -*-\\n# request.requires_https...ateira\'),\\n    Field(\'num_questoes\', \'smallint\'))\\n", environment={\'A\': <class \'gluon.html.A\'>, \'ANY_OF\': <class \'gluon.validators.ANY_OF\'>, \'Auth\': <class \'gluon.tools.Auth\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, \'CAT\': <class \'gluon.html.CAT\'>, \'CENTER\': <class \'gluon.html.CENTER\'>, ...}, layer=\'/home/jbtte/web2py/applications/questoes/models/db.py\')'
+p96
+sS'func'
+p97
+S'restricted'
+p98
+sa(dp99
+g74
+S'/home/jbtte/web2py/applications/questoes/models/db.py'
+p100
+sg76
+(dp101
+S'Field'
+p102
+S"<class 'gluon.dal.Field'>"
+p103
+ssg82
+I64
+sg83
+(dp104
+I64
+S"    Field('num_questoes', 'smallint'))"
+p105
+sI65
+S''
+sI66
+S"db.define_table('materia_administrativo',"
+p106
+sI67
+S"    Field('mateira'),"
+p107
+sI68
+S"    Field('num_questoes', 'smallint'))"
+p108
+sI59
+S"    Field('nome'))"
+p109
+sI60
+S''
+sI61
+S''
+sI62
+S"db.define_table('materia_civil_1',"
+p110
+sI63
+S"    Field('mateira'),"
+p111
+ssg95
+S'()'
+p112
+sg97
+S'<module>'
+p113
+sa(dp114
+g74
+S'/home/jbtte/web2py/gluon/dal.py'
+p115
+sg76
+(dp116
+S'fields'
+p117
+S'(<gluon.dal.Field object>, <gluon.dal.Field object>)'
+p118
+sS'self'
+p119
+S'<DAL uri="mysql:******@mysql.server/jbtte$questoes">'
+p120
+sS'args'
+p121
+g21
+sS'tablename'
+p122
+S"'materia_civil_1'"
+p123
+sS'table'
+p124
+S'undefined'
+p125
+sS'self.lazy_define_table'
+p126
+S'<bound method DAL.lazy_define_table of <DAL uri="mysql:******@mysql.server/jbtte$questoes">>'
+p127
+ssg82
+I7788
+sg83
+(dp128
+I7783
+S'                    % (tablename,invalid_args))'
+p129
+sI7784
+S'        if self._lazy_tables and not tablename in self._LAZY_TABLES:'
+p130
+sI7785
+S'            self._LAZY_TABLES[tablename] = (tablename,fields,args)'
+p131
+sI7786
+S'            table = None'
+p132
+sI7787
+S'        else:'
+p133
+sI7788
+S'            table = self.lazy_define_table(tablename,*fields,**args)'
+p134
+sI7789
+S'        if not tablename in self.tables:'
+p135
+sI7790
+S'            self.tables.append(tablename)'
+p136
+sI7791
+S'        return table'
+p137
+sI7792
+S''
+ssg95
+S'(self=<DAL uri="mysql:******@mysql.server/jbtte$questoes">, tablename=\'materia_civil_1\', *fields=(<gluon.dal.Field object>, <gluon.dal.Field object>), **args={})'
+p138
+sg97
+S'define_table'
+p139
+sa(dp140
+g74
+S'/home/jbtte/web2py/gluon/dal.py'
+p141
+sg76
+(dp142
+S'polymodel'
+p143
+S'None'
+p144
+ssg82
+I7825
+sg83
+(dp145
+I7820
+S'            try:'
+p146
+sI7821
+S'                GLOBAL_LOCKER.acquire()'
+p147
+sI7822
+S'                self._lastsql = self._adapter.create_table('
+p148
+sI7823
+S'                    table,migrate=migrate,'
+p149
+sI7824
+S'                    fake_migrate=fake_migrate,'
+p150
+sI7825
+S'                    polymodel=polymodel)'
+p151
+sI7826
+S'            finally:'
+p152
+sI7827
+S'                GLOBAL_LOCKER.release()'
+p153
+sI7828
+S'        else:'
+p154
+sI7829
+S'            table._dbt = None'
+p155
+ssg95
+S'(self=<DAL uri="mysql:******@mysql.server/jbtte$questoes">, tablename=\'materia_civil_1\', *fields=(<gluon.dal.Field object>, <gluon.dal.Field object>), **args={})'
+p156
+sg97
+S'lazy_define_table'
+p157
+sa(dp158
+g74
+S'/home/jbtte/web2py/gluon/dal.py'
+p159
+sg76
+(dp160
+S'field_type'
+p161
+S"'smallint'"
+p162
+sS'field_name'
+p163
+S"'num_questoes'"
+p164
+ssg82
+I864
+sg83
+(dp165
+I864
+S'                    (field_type, field_name))'
+p166
+sI865
+S'            else:'
+p167
+sI866
+S'                ftype = types[field_type]\\'
+p168
+sI867
+S'                     % dict(length=field.length)'
+p169
+sI868
+S"            if not field_type.startswith('id') and \\"
+p170
+sI859
+S'                                         fieldname=field_name, srid=srid,'
+p171
+sI860
+S'                                         dimension=dimension)'
+p172
+sI861
+S'                    postcreation_fields.append(ftype)'
+p173
+sI862
+S'            elif not field_type in types:'
+p174
+sI863
+S"                raise SyntaxError('Field: unknown field type: %s for %s' % \\"
+p175
+ssg95
+S'(self=<gluon.dal.MySQLAdapter object>, table=<Table materia_civil_1 (id,mateira,num_questoes)>, migrate=True, fake_migrate=False, polymodel=None)'
+p176
+sg97
+S'create_table'
+p177
+sasS'pyver'
+p178
+S'Python 2.7.5+: /usr/local/bin/uwsgi (prefix: /usr)'
+p179
+sS'session'
+p180
+g69
+(S's\x1f\x01\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top">last_orderby</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">last_query</td><td valign="top">:</td><td><div>db.administrativo.id&gt;0</div></td></tr></table></div>'
+tRp181
+sS'etype'
+p182
+S"<type 'exceptions.SyntaxError'>"
+p183
+sS'date'
+p184
+S'Mon Dec  2 18:16:01 2013'
+p185
+sS'response'
+p186
+g69
+(S's\xc3\x11\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top">body</td><td valign="top">:</td><td><div>&lt;cStringIO.StringO object at 0x31fcdc0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cookies</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">session_id_questoes</td><td valign="top">:</td><td><div>189.59.8.138-717e5ce0-af8e-449b-bd1a-3eff7ddce72f<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">delimiters</td><td valign="top">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">files</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">flash</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">generic_patterns</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">headers</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">X-Powered-By</td><td valign="top">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">menu</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">meta</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">models_to_run</td><td valign="top">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^appadmin/\\w+\\.py$</div></td></tr><tr><td><div>^appadmin/index/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">postprocessing</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_cookie_expires</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_data_name</td><td valign="top">:</td><td><div>session_data_questoes</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_file</td><td valign="top">:</td><td><div>&lt;open file &#x27;/home/jbtte/web2py/applications/questoes/sessions/189.59.8.138-717e5ce0-af8e-449b-bd1a-3eff7ddce72f&#x27;, mode &#x27;rb+&#x27; at 0x37b9810&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_filename</td><td valign="top">:</td><td><div>/home/jbtte/web2py/applications/questoes/sessions/189.59.8.138-717e5ce0-af8e-449b-bd1a-3eff7ddce72f</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id</td><td valign="top">:</td><td><div>189.59.8.138-717e5ce0-af8e-449b-bd1a-3eff7ddce72f</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_name</td><td valign="top">:</td><td><div>session_id_questoes</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_locked</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_new</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_storage_type</td><td valign="top">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">status</td><td valign="top">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">view</td><td valign="top">:</td><td><div>appadmin/index.html</div></td></tr></table></div>'
+tRp187
+sS'locals'
+p188
+(dp189
+S'polymodel'
+p190
+S'None'
+p191
+sS'postcreation_fields'
+p192
+S'[]'
+p193
+sS'sortable'
+p194
+S'3'
+sS'sql_fields_aux'
+p195
+S"{'id': {'sql': 'INT AUTO_INCREMENT NOT NULL'}, 'mateira': {'sql': 'VARCHAR(255)'}}"
+p196
+sS'TFK'
+p197
+g21
+sS'field_type'
+p198
+S"'smallint'"
+p199
+sS'migrate'
+p200
+S'True'
+p201
+sS'fields'
+p202
+S"['id INT AUTO_INCREMENT NOT NULL', 'mateira VARCHAR(255)']"
+p203
+sS'self'
+p204
+S'<gluon.dal.MySQLAdapter object>'
+p205
+sS'db'
+p206
+S'<DAL uri="mysql:******@mysql.server/jbtte$questoes">'
+p207
+sS'fake_migrate'
+p208
+S'False'
+p209
+sS'field'
+p210
+S'<gluon.dal.Field object>'
+p211
+sS'ftype'
+p212
+S"'VARCHAR(255)'"
+p213
+sS'tablename'
+p214
+S"'materia_civil_1'"
+p215
+sS'table'
+p216
+S'<Table materia_civil_1 (id,mateira,num_questoes)>'
+p217
+sS'sql_fields'
+p218
+S"{'id': {'length': 255, 'notnull': False, 'sortable': 1, 'sql': 'INT AUTO_INCREMENT NOT NULL', 'type': 'id', 'unique': False}, 'mateira': {'length': 255, 'notnull': False, 'sortable': 2, 'sql': 'VARCHAR(255)', 'type': 'string', 'unique': False}}"
+p219
+sS'field_name'
+p220
+S"'num_questoes'"
+p221
+sS'types'
+p222
+S"{'big-id': 'BIGINT AUTO_INCREMENT NOT NULL', 'big-reference': 'BIGINT, INDEX %(index_name)s (%(field_name)s), F...ES %(foreign_key)s ON DELETE %(on_delete_action)s', 'bigint': 'BIGINT', 'blob': 'LONGBLOB', 'boolean': 'CHAR(1)', 'date': 'DATE', 'datetime': 'DATETIME', 'decimal': 'NUMERIC(%(precision)s,%(scale)s)', 'double': 'DOUBLE', 'float': 'FLOAT', ...}"
+p223
+sssS'traceback'
+p224
+S'Traceback (most recent call last):\n  File "/home/jbtte/web2py/gluon/restricted.py", line 212, in restricted\n    exec ccode in environment\n  File "/home/jbtte/web2py/applications/questoes/models/db.py", line 64, in <module>\n    Field(\'num_questoes\', \'smallint\'))\n  File "/home/jbtte/web2py/gluon/dal.py", line 7788, in define_table\n    table = self.lazy_define_table(tablename,*fields,**args)\n  File "/home/jbtte/web2py/gluon/dal.py", line 7825, in lazy_define_table\n    polymodel=polymodel)\n  File "/home/jbtte/web2py/gluon/dal.py", line 864, in create_table\n    (field_type, field_name))\nSyntaxError: Field: unknown field type: smallint for num_questoes\n'
+p225
+s.
